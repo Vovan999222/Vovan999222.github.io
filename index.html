@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Banana Store - The World's Best Bananas</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f2df0d",
+              "background-light": "#f8f8f5",
+              "background-dark": "#222110",
+              "leaf-green": "#4a7c59", 
+            },
+            fontFamily: {
+              "display": ["Be Vietnam Pro", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
+<!-- Navbar -->
+<div class="relative flex w-full flex-col bg-white dark:bg-background-dark border-b border-[#f0f0e0] dark:border-[#333220]">
+<header class="flex items-center justify-between whitespace-nowrap px-4 py-3 lg:px-10 max-w-[1440px] mx-auto w-full">
+<div class="flex items-center gap-4 lg:gap-8">
+<a class="flex items-center gap-3 text-[#181711] dark:text-white group" href="#">
+<div class="size-8 flex items-center justify-center bg-primary rounded-full text-[#181711]">
+<span class="material-symbols-outlined">nutrition</span>
+</div>
+<h2 class="text-[#181711] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] group-hover:text-primary transition-colors">Banana Store</h2>
+</a>
+<nav class="hidden md:flex items-center gap-6 lg:gap-9">
+<a class="text-[#181711] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Products</a>
+<a class="text-[#181711] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Wholesale</a>
+<a class="text-[#181711] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a>
+<a class="text-[#181711] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 lg:gap-8">
+<label class="hidden sm:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-[#f5f4f0] dark:bg-[#2c2b1a]">
+<div class="text-[#8a8760] flex items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-transparent text-[#181711] dark:text-white focus:outline-0 focus:ring-0 border-none placeholder:text-[#8a8760] px-3 text-sm font-normal leading-normal" placeholder="Search bananas..."/>
+</div>
+</label>
+<button class="flex items-center justify-center overflow-hidden rounded-lg size-10 bg-[#f5f4f0] dark:bg-[#2c2b1a] text-[#181711] dark:text-white hover:bg-primary/20 transition-colors relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full"></span>
+</button>
+<button class="md:hidden flex items-center justify-center overflow-hidden rounded-lg size-10 bg-[#f5f4f0] dark:bg-[#2c2b1a] text-[#181711] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+</div>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center w-full">
+<div class="layout-content-container flex flex-col max-w-[1280px] w-full px-4 lg:px-10 py-5 gap-12">
+<!-- Hero Section -->
+<div class="@container">
+<div class="flex flex-col-reverse gap-8 py-10 lg:flex-row lg:items-center lg:justify-between">
+<div class="flex flex-col gap-6 lg:w-1/2 lg:pr-10">
+<div class="flex flex-col gap-4 text-left">
+<span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider text-leaf-green bg-leaf-green/10 rounded-full w-fit">100% Organic &amp; Fresh</span>
+<h1 class="text-[#181711] dark:text-white text-5xl sm:text-6xl font-black leading-[1.1] tracking-[-0.033em]">
+                                The World's Best <span class="text-primary text-stroke-black">Bananas</span>
+</h1>
+<h2 class="text-[#595745] dark:text-gray-300 text-lg sm:text-xl font-normal leading-relaxed max-w-lg">
+                                Premium quality, ethically sourced from the finest tropical plantations, and delivered perfectly ripe to your door.
+                            </h2>
+</div>
+<div class="flex gap-4 pt-2">
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-[#d9c80b] text-[#181711] text-base font-bold leading-normal tracking-[0.015em] transition-colors shadow-lg shadow-primary/30">
+                                Shop Now
+                            </button>
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white dark:bg-[#333220] border border-[#e6e4d9] dark:border-[#44422a] text-[#181711] dark:text-white text-base font-medium leading-normal tracking-[0.015em] hover:bg-[#f5f4f0] dark:hover:bg-[#44422a] transition-colors">
+                                View Wholesale
+                            </button>
+</div>
+<div class="flex items-center gap-2 text-sm text-[#8a8760] mt-2">
+<span class="material-symbols-outlined text-lg">local_shipping</span>
+<span>Free shipping on orders over $50</span>
+</div>
+</div>
+<div class="w-full lg:w-1/2 flex justify-center items-center relative">
+<!-- Decorative blob background behind image -->
+<div class="absolute w-[90%] h-[90%] bg-primary/20 rounded-full blur-3xl -z-10"></div>
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-contain rounded-xl" data-alt="A bunch of bright yellow ripe bananas on a clean background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDV_YhvjUB6p9wJdHwZXSroU95gm-9uLeHCs8-XqGzopbCOo2RcRYBRj6rDqMm-mtnkxVEfEO_8i2OO3-bukg0k48Meq9PoZnDCZFKEVMEP9sY6JR_4KzsH-JIBgFUpu_zKU6Yjdb8LwRzRmAc6XE5ka9av2l0H6lnnQn9ooAjH-2Chb5GAvdT6F6lNnO91sea-RSH6AVaDwhJ6STyoDmtx3heWcd1MBNREuyOjQWSpzT-vCQ0v4MDFWpEVTaLl8U0YSGEtAUsLimU");'></div>
+</div>
+</div>
+</div>
+<!-- Features / Stats -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-8 border-y border-[#e6e4d9] dark:border-[#333220]">
+<div class="flex flex-col items-center text-center gap-2 p-4">
+<span class="material-symbols-outlined text-4xl text-primary">eco</span>
+<p class="font-bold text-[#181711] dark:text-white">100% Organic</p>
+</div>
+<div class="flex flex-col items-center text-center gap-2 p-4">
+<span class="material-symbols-outlined text-4xl text-primary">schedule</span>
+<p class="font-bold text-[#181711] dark:text-white">24h Delivery</p>
+</div>
+<div class="flex flex-col items-center text-center gap-2 p-4">
+<span class="material-symbols-outlined text-4xl text-primary">verified</span>
+<p class="font-bold text-[#181711] dark:text-white">Quality Check</p>
+</div>
+<div class="flex flex-col items-center text-center gap-2 p-4">
+<span class="material-symbols-outlined text-4xl text-primary">groups</span>
+<p class="font-bold text-[#181711] dark:text-white">Fair Trade</p>
+</div>
+</div>
+<!-- Product Grid Section -->
+<div class="flex flex-col gap-8 pb-10">
+<div class="flex items-center justify-between">
+<h2 class="text-[#181711] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">Our Fresh Harvest</h2>
+<a class="hidden sm:flex items-center gap-1 text-leaf-green font-bold hover:underline" href="#">
+                        View all products 
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product 1: Cavendish -->
+<div class="flex flex-col rounded-xl bg-white dark:bg-[#2c2b1a] shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden group">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-[#F9F9F9] dark:bg-[#222110]">
+<div class="w-full h-full bg-center bg-no-repeat bg-contain transform group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a bunch of yellow Cavendish bananas" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNnWrGmw3E2zwrLS4wjq0jFspU6xuypiBUbYCP9gPX-7J81gHuD7Rrj9wUnqSEhOSdRqTLfPjRW1uWpaXXWIjCktYShtXUQubyXTnCi3VFZjuEbRUa9MUGVvSaqFDZIH8g7F63xCxxhQb8fU4gUYSdNJQDY-spa6nRHm2OIod7SrHSQmA2LxU-wMZScMMDp8PmBNfreK8dexJGlfajFNRtLn1_9QP5V-ViqNncgT9qsYL5kJGdkburHwqd4olTB5wJlQpk9MhGTws");'></div>
+<div class="absolute top-3 left-3 bg-primary text-[#181711] text-xs font-bold px-2 py-1 rounded">Bestseller</div>
+</div>
+<div class="flex flex-col gap-3 p-5">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#181711] dark:text-white text-xl font-bold leading-tight">Cavendish Bananas</h3>
+<p class="text-[#8a8760] text-sm mt-1">Sweet, creamy, and classic.</p>
+</div>
+<span class="text-lg font-bold text-leaf-green">$0.69<span class="text-xs font-normal text-[#8a8760]">/lb</span></span>
+</div>
+<div class="mt-2 pt-4 border-t border-[#f5f4f0] dark:border-[#44422a] flex items-center justify-between gap-3">
+<div class="flex items-center gap-1 text-yellow-500 text-sm">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="font-bold text-[#181711] dark:text-white">4.9</span>
+<span class="text-[#8a8760]">(1.2k)</span>
+</div>
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-primary text-[#181711] text-sm font-bold hover:bg-[#d9c80b] transition-colors">
+                                    Add to Cart
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product 2: Plantain -->
+<div class="flex flex-col rounded-xl bg-white dark:bg-[#2c2b1a] shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden group">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-[#F9F9F9] dark:bg-[#222110]">
+<div class="w-full h-full bg-center bg-no-repeat bg-contain transform group-hover:scale-105 transition-transform duration-500" data-alt="Green plantain bananas ideal for cooking" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhhJfdCqoOGeMQ5MCJEjgas0iUtV0kyJZqRISOJd_bgnbtHwIoCQOuqo9cproLrFr8RAY3JImACcnLvRdGE1vwo2rQ8U7dOtyiy2hFJ66Mf0Zz2hWKSqt2Lr07r3pnin6hL5XEnI8Gp7n05Jqmat9mOXkYa5EnUeMgAJsKtMTLeKpzXb5LKSDmFPPYgRhcwoegBBPsagVrKXXZetw3qnieBKmO-V4d9NlIWI6k3hzokOl_ht2I3glkjttTgZzfOJgBbuLPq_nTXxs");'></div>
+</div>
+<div class="flex flex-col gap-3 p-5">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#181711] dark:text-white text-xl font-bold leading-tight">Plantain Bananas</h3>
+<p class="text-[#8a8760] text-sm mt-1">Starchy, savory, cooking essential.</p>
+</div>
+<span class="text-lg font-bold text-leaf-green">$0.89<span class="text-xs font-normal text-[#8a8760]">/lb</span></span>
+</div>
+<div class="mt-2 pt-4 border-t border-[#f5f4f0] dark:border-[#44422a] flex items-center justify-between gap-3">
+<div class="flex items-center gap-1 text-yellow-500 text-sm">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="font-bold text-[#181711] dark:text-white">4.7</span>
+<span class="text-[#8a8760]">(850)</span>
+</div>
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-primary text-[#181711] text-sm font-bold hover:bg-[#d9c80b] transition-colors">
+                                    Add to Cart
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product 3: Red Bananas -->
+<div class="flex flex-col rounded-xl bg-white dark:bg-[#2c2b1a] shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden group">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-[#F9F9F9] dark:bg-[#222110]">
+<div class="w-full h-full bg-center bg-no-repeat bg-contain transform group-hover:scale-105 transition-transform duration-500" data-alt="Exotic red bananas with a reddish-purple skin" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOC0Hpfaab9GTfEF3NUroo3UdJlR2Mj8ahlZrk-8KcVwQC9IAYNSQDRtxgai8VLxgDIu4ILWBuLiTtjQLYSJl0GmsGiU0yjwkj3IMY36d_u5FBhS-ml19UjTnOhsI1DD5Q0RWUCbFVHrsw0RcLIW4htqVY_JTAkqm1OUr7l-178Ux-L7ILaSQAKUusVTG4-GW0QaiauYvyhg1R78al08o3i6TJZiL1oY1Gb1iI5IXuOvpriwezE9l5bfh0ZN7t5yQSz-1MhJLlNNk");'></div>
+<div class="absolute top-3 left-3 bg-leaf-green text-white text-xs font-bold px-2 py-1 rounded">Exotic</div>
+</div>
+<div class="flex flex-col gap-3 p-5">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-[#181711] dark:text-white text-xl font-bold leading-tight">Red Bananas</h3>
+<p class="text-[#8a8760] text-sm mt-1">Sweet, berry-like flavor profile.</p>
+</div>
+<span class="text-lg font-bold text-leaf-green">$1.29<span class="text-xs font-normal text-[#8a8760]">/lb</span></span>
+</div>
+<div class="mt-2 pt-4 border-t border-[#f5f4f0] dark:border-[#44422a] flex items-center justify-between gap-3">
+<div class="flex items-center gap-1 text-yellow-500 text-sm">
+<span class="material-symbols-outlined text-[18px] fill-current">star</span>
+<span class="font-bold text-[#181711] dark:text-white">4.8</span>
+<span class="text-[#8a8760]">(320)</span>
+</div>
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-primary text-[#181711] text-sm font-bold hover:bg-[#d9c80b] transition-colors">
+                                    Add to Cart
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Wholesale Banner -->
+<div class="w-full rounded-2xl bg-[#181711] dark:bg-[#2c2b1a] overflow-hidden relative">
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(#f2df0d_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="flex flex-col md:flex-row items-center justify-between p-8 md:p-12 gap-8 relative z-10">
+<div class="flex flex-col gap-4 max-w-xl">
+<span class="text-primary font-bold tracking-wide uppercase text-sm">For Business</span>
+<h2 class="text-white text-3xl md:text-4xl font-bold">Need Bananas in Bulk?</h2>
+<p class="text-gray-300 text-lg">We supply restaurants, grocery stores, and distributors nationwide with the freshest harvest at competitive rates.</p>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-[#181711] text-base font-bold leading-normal hover:scale-105 transition-transform">
+                            Get a Quote
+                        </button>
+</div>
+</div>
+</div>
+<!-- Newsletter -->
+<div class="flex flex-col items-center justify-center gap-6 py-12 w-full max-w-2xl mx-auto text-center">
+<div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<h2 class="text-[#181711] dark:text-white text-2xl font-bold">Join the Bunch</h2>
+<p class="text-[#595745] dark:text-gray-300">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+<div class="flex flex-col sm:flex-row w-full gap-3">
+<input class="flex-1 h-12 px-4 rounded-lg border border-[#e6e4d9] dark:border-[#44422a] bg-white dark:bg-[#2c2b1a] text-[#181711] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Enter your email" type="email"/>
+<button class="h-12 px-8 bg-[#181711] dark:bg-primary text-white dark:text-[#181711] font-bold rounded-lg hover:opacity-90 transition-opacity">Subscribe</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#1a190d] border-t border-[#f0f0e0] dark:border-[#333220] py-12 px-4 lg:px-10">
+<div class="max-w-[1280px] mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="size-6 flex items-center justify-center bg-primary rounded-full text-[#181711]">
+<span class="material-symbols-outlined text-sm">nutrition</span>
+</div>
+<span class="font-bold text-lg text-[#181711] dark:text-white">Banana Store</span>
+</div>
+<p class="text-sm text-[#8a8760] leading-relaxed">Delivering nature's perfect snack directly to your doorstep. Freshness guaranteed.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-[#181711] dark:text-white">Shop</h4>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">Fresh Bananas</a>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">Dried Snacks</a>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">Banana Bread Mixes</a>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">Gift Boxes</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-[#181711] dark:text-white">Company</h4>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">Careers</a>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-[#181711] dark:text-white">Legal</h4>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-sm text-[#8a8760] hover:text-primary transition-colors" href="#">Shipping Policy</a>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto w-full mt-12 pt-8 border-t border-[#f5f4f0] dark:border-[#333220] flex flex-col md:flex-row items-center justify-between text-sm text-[#8a8760]">
+<p>© 2023 Banana Store Inc. All rights reserved.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</footer>
+</body>
+</html>
