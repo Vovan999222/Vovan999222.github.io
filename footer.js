@@ -111,6 +111,12 @@ document.addEventListener("DOMContentLoaded", () => {
             padding: 24px 0; 
             width: 100%;
         }
+        
+        .gh-footer-bottom-links a.gh-footer-bottom-link:hover {
+            color: var(--text-muted, #8b949e);
+            text-decoration: none;
+            cursor: pointer;
+        }
 
         .gh-footer-bottom {
             max-width: 1280px;
@@ -208,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="gh-footer-bottom-wrapper">
             <div class="gh-footer-bottom">
                 <div class="gh-footer-bottom-links">
-                    <span>© 2026 volodimir001. Styled with GitHub design system.</span>
+                    <span>© 2026 <a href="./" class="gh-footer-bottom-link">volodimir001</a>. Styled with GitHub design system.</span>
                 </div>
                 
                 <div class="gh-social-icons">
