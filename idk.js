@@ -19,8 +19,8 @@ const showDevMeme = async () => {
             `;
             
             console.log('%c+', cssStyle);
-            console.log('%cАга! Попался, ЕТОГО В ОПЕНСОРС', 'color: #39d353; font-size: 20px; font-weight: bold; font-family: monospace;');
-            console.log('%cПопался, теперь все тебе имеют', 'color: #8b949e; font-size: 14px; font-family: monospace;');
+            console.log('%cАга! Попался, ЭТОГО В ОПЕНСОРС', 'color: #39d353; font-size: 20px; font-weight: bold; font-family: monospace;');
+            console.log('%cПопался, теперь все тебя имеют', 'color: #8b949e; font-size: 14px; font-family: monospace;');
         };
         reader.readAsDataURL(blob);
     } catch (error) {}
