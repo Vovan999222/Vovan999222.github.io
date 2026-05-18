@@ -1,250 +1,424 @@
 <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --text-muted: #8b949e;
+            --border-color: #30363d;
+            --link-color: #58a6ff;
+            --header-bg: #161b22;
+            --btn-bg: #21262d;
+            --btn-border: rgba(240, 246, 252, 0.1);
+            --btn-hover: #30363d;
+            --btn-primary-bg: #238636;
+            --btn-primary-hover: #2ea043;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+            --matrix-green: #39d353;
+        }
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Home page</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "tertiary-fixed-dim": "#ffb3af",
-              "inverse-primary": "#006c49",
-              "on-primary": "#003824",
-              "secondary-fixed-dim": "#9ed2b5",
-              "on-tertiary": "#650911",
-              "on-secondary-container": "#91c4a8",
-              "on-secondary": "#013824",
-              "on-error-container": "#ffdad6",
-              "surface-bright": "#31394d",
-              "primary": "#4edea3",
-              "secondary-fixed": "#baeed1",
-              "primary-container": "#10b981",
-              "surface-tint": "#4edea3",
-              "background": "#0b1326",
-              "surface-variant": "#2d3449",
-              "error": "#ffb4ab",
-              "on-tertiary-container": "#711419",
-              "secondary-container": "#21523c",
-              "on-primary-fixed": "#002113",
-              "surface": "#0b1326",
-              "tertiary-container": "#fc7c78",
-              "secondary": "#9ed2b5",
-              "on-background": "#dae2fd",
-              "surface-container-highest": "#2d3449",
-              "inverse-on-surface": "#283044",
-              "outline-variant": "#3c4a42",
-              "surface-container-lowest": "#060e20",
-              "tertiary-fixed": "#ffdad7",
-              "surface-container-high": "#222a3d",
-              "on-secondary-fixed-variant": "#1e4f3a",
-              "primary-fixed": "#6ffbbe",
-              "on-error": "#690005",
-              "on-tertiary-fixed": "#410005",
-              "inverse-surface": "#dae2fd",
-              "on-surface": "#dae2fd",
-              "on-secondary-fixed": "#002113",
-              "surface-container-low": "#131b2e",
-              "on-primary-fixed-variant": "#005236",
-              "on-primary-container": "#00422b",
-              "surface-container": "#171f33",
-              "surface-dim": "#0b1326",
-              "primary-fixed-dim": "#4edea3",
-              "outline": "#86948a",
-              "on-tertiary-fixed-variant": "#842225",
-              "on-surface-variant": "#bbcabf",
-              "error-container": "#93000a",
-              "tertiary": "#ffb3af"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Inter"],
-              "label": ["Space Grotesk"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        header .logo {
+            fill: var(--text-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 16px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-muted);
+        }
+
+        .container {
+            max-width: 1012px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 60px 0;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--btn-primary-bg);
+            color: #ffffff;
+            border-color: rgba(240, 246, 252, 0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--btn-primary-hover);
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            background-color: var(--btn-bg);
+            color: var(--text-color);
+            border-color: var(--btn-border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--btn-hover);
+            text-decoration: none;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .terminal-wrapper {
+            flex: 1;
+            background-color: #010409;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 16px 32px rgba(0,0,0,0.8);
+        }
+
+        .terminal-header {
+            background-color: var(--header-bg);
+            padding: 8px 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            gap: 8px;
+        }
+
+        .term-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .dot-red { background-color: #ff5f56; }
+        .dot-yellow { background-color: #ffbd2e; }
+        .dot-green { background-color: #27c93f; }
+
+        .terminal-body {
+            padding: 24px;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--matrix-green);
+        }
+
+        .prompt::before {
+            content: "vovan@dev-server:~$ ";
+            color: var(--link-color);
+        }
+
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid var(--matrix-green);
+            width: 22ch;
+            animation: typing 2s steps(22, end), blink-caret .75s step-end infinite;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0px 0 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title svg {
+            fill: var(--text-muted);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .repo-card {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-color);
+            transition: border-color 0.2s ease;
+        }
+
+        .repo-card:hover {
+            border-color: var(--text-muted);
+        }
+
+        .repo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .repo-name {
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .repo-name svg {
+            fill: var(--text-muted);
+        }
+
+        .badge {
+            border: 1px solid var(--border-color);
+            border-radius: 2em;
+            padding: 2px 8px;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .repo-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .repo-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .lang-color {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 4px;
             vertical-align: middle;
         }
-        .glass-nav {
-            background: rgba(45, 52, 73, 0.6);
-            backdrop-filter: blur(20px);
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 22ch }
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #4edea3 0%, #10b981 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--matrix-green); }
         }
-        .terminal-grid {
-            background-image: radial-gradient(circle at 2px 2px, #3c4a42 1px, transparent 0);
-            background-size: 40px 40px;
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 40px 0;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .terminal-wrapper {
+                width: 100%;
+            }
         }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/15">
-<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-<div class="flex items-center gap-2">
-<div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
-<span class="material-symbols-outlined text-on-primary text-sm" style="font-variation-settings: 'FILL' 1;">terminal</span>
-</div>
-<span class="font-headline font-bold text-xl tracking-tight text-on-surface">volodimir001</span>
-</div>
-<div class="hidden md:flex items-center gap-10">
-<a class="font-label text-sm uppercase tracking-widest text-on-surface hover:text-primary transition-colors" href="#">Home</a>
-<a class="font-label text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
-<a class="font-label text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Projects</a>
-<a class="font-label text-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
-</div>
-</div>
-</nav>
-<main>
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center pt-20 overflow-hidden terminal-grid">
-<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none"></div>
-<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
-<div class="lg:col-span-8 flex flex-col justify-center">
-<div class="mb-6 flex items-center gap-3">
-<span class="px-3 py-1 bg-secondary-container text-secondary font-label text-[10px] uppercase tracking-[0.2em] rounded-full">Available for hire</span>
-<div class="h-[1px] w-12 bg-outline-variant/40"></div>
-</div>
-<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] mb-8">
-                        Building <span class="hero-gradient">Scalable</span> <br/>Solutions.
-                    </h1>
-<p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed mb-10">
-                        Full-stack developer specializing in high-performance distributed systems and cinematic user interfaces. Turning complex logic into elegant architectural art.
-                    </p>
-<div class="flex flex-wrap gap-4">
-<button class="group flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-xl font-headline font-bold text-lg hover:shadow-[0_0_30px_rgba(78,222,163,0.3)] transition-all">
-                            View Projects
-                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-<button class="flex items-center gap-3 border border-outline-variant/40 text-on-surface px-8 py-4 rounded-xl font-headline font-bold text-lg hover:bg-surface-container-high transition-all">
-                            Expertise
-                        </button>
-</div>
-</div>
-<!-- Asymmetric Code Block Decoration -->
-<div class="lg:col-span-4 hidden lg:block relative">
-<div class="absolute top-1/2 -translate-y-1/2 right-0 w-[120%] aspect-square bg-surface-container-low rounded-full blur-[120px] opacity-20"></div>
-<div class="relative bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-6 shadow-2xl transform rotate-2">
-<div class="flex gap-1.5 mb-6">
-<div class="w-3 h-3 rounded-full bg-error/40"></div>
-<div class="w-3 h-3 rounded-full bg-tertiary/40"></div>
-<div class="w-3 h-3 rounded-full bg-primary/40"></div>
-</div>
-<div class="font-mono text-sm space-y-2 text-on-surface-variant/80">
-<p class="text-primary/70"><span class="text-tertiary">class</span> <span class="text-secondary">Engineer</span> {</p>
-<p class="pl-4"><span class="text-tertiary">constructor</span>() {</p>
-<p class="pl-8 text-on-surface">this.focus = <span class="text-primary-container">"Scalability"</span>;</p>
-<p class="pl-8 text-on-surface">this.stack = [<span class="text-primary-container">"React"</span>, <span class="text-primary-container">"Go"</span>];</p>
-<p class="pl-4">}</p>
-<p class="pl-4 text-tertiary">async <span class="text-secondary">deploy</span>() {</p>
-<p class="pl-8">await cloud.provision();</p>
-<p class="pl-4">}</p>
-<p class="text-primary/70">}</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Featured Project Asymmetric Section -->
-<section class="py-24 bg-surface overflow-hidden">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-<div class="lg:col-span-7 relative group">
-<div class="absolute -inset-4 bg-primary/10 rounded-2xl blur-2xl group-hover:bg-primary/20 transition-all"></div>
-<div class="relative bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant/20 aspect-video">
-<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Technical dashboard with complex data visualizations and dark theme" src="image446886.png"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-high via-transparent to-transparent"></div>
-</div>
-</div>
-<div class="lg:col-span-5">
-<span class="font-label text-xs uppercase tracking-[0.3em] text-secondary mb-4 block">Case Study / 01</span>
-<h2 class="font-headline text-5xl font-bold mb-6 tracking-tight">zlp chat</h2>
-<p class="text-on-surface-variant text-lg leading-relaxed mb-8">A premium CRM system and omnichannel chat aggregator. Engineered to centralize customer interactions, featuring a built-in automation builder that reduces response times by 40% and seamlessly scales business processes.</p>
-<ul class="space-y-4 mb-10">
-<li class="flex items-center gap-3 text-on-surface">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-<span class="text-sm font-medium">Unified workspace for all messengers</span>
-</li>
-<li class="flex items-center gap-3 text-on-surface">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-<span class="text-sm font-medium">Visual automation workflow builder</span>
-</li>
-<li class="flex items-center gap-3 text-on-surface">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-<span class="text-sm font-medium">Advanced real-time analytics</span>
-</li>
-</ul>
-<a class="inline-flex items-center gap-2 text-primary font-headline font-bold text-lg hover:gap-4 transition-all" href="https://zlp.volodimir001.me/">
-Deep Dive 
-<span class="material-symbols-outlined">east</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Stats Section -->
-<section class="py-20 border-t border-outline-variant/10">
-<div class="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="text-center">
-<div class="font-headline text-5xl font-bold text-on-surface mb-2">120<span class="text-primary">+</span></div>
-<div class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Commits / Week</div>
-</div>
-<div class="text-center border-l border-outline-variant/10">
-<div class="font-headline text-5xl font-bold text-on-surface mb-2">45</div>
-<div class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Live Deployments</div>
-</div>
-<div class="text-center border-l border-outline-variant/10">
-<div class="font-headline text-5xl font-bold text-on-surface mb-2">05</div>
-<div class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Years XP</div>
-</div>
-<div class="text-center border-l border-outline-variant/10">
-<div class="font-headline text-5xl font-bold text-on-surface mb-2">2M<span class="text-secondary">+</span></div>
-<div class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Lines of Code</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-low py-16 border-t border-outline-variant/15">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 bg-surface-container-highest rounded flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">terminal</span>
-</div>
-<p class="font-label text-sm text-on-surface-variant">© 2026 volodimir001. All rights reserved.</p>
-</div>
-<div class="flex items-center gap-6">
-<a class="p-3 bg-surface-container-high rounded-full hover:bg-primary/10 hover:text-primary transition-all" href="#">
-<span class="material-symbols-outlined">code</span>
-</a>
-<a class="p-3 bg-surface-container-high rounded-full hover:bg-primary/10 hover:text-primary transition-all" href="#">
-<span class="material-symbols-outlined">terminal</span>
-</a>
-<a class="p-3 bg-surface-container-high rounded-full hover:bg-primary/10 hover:text-primary transition-all" href="#">
-<span class="material-symbols-outlined">share</span>
-</a>
-</div>
-</div>
-<div class="mt-12 flex justify-center gap-8 text-[10px] font-label uppercase tracking-[0.4em] text-outline">
-<a href="https://github.com/Vovan999222"><span class="hover:text-primary cursor-pointer transition-colors">GitHub</span></a>
-</div>
-</div>
-</footer>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="./" style="display: flex; align-items: center; text-decoration: none;">
+                <svg height="32" viewBox="0 0 16 16" version="1.1" width="32" class="logo">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+            <nav class="nav-links">
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero" id="about">
+            <div class="hero-text">
+                <h1>Hi, I'm Volodimir</h1>
+                <p>Software Engineer. Specializing in backend development, architecture, and automation. Building APIs and complex bots.</p>
+                <div class="hero-actions">
+                    <a href="projects.html" class="btn btn-primary">View Projects</a>
+                    <a href="https://github.com/Vovan999222" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+                </div>
+            </div>
+
+            <div class="terminal-wrapper">
+                <div class="terminal-header">
+                    <div class="term-dot dot-red"></div>
+                    <div class="term-dot dot-yellow"></div>
+                    <div class="term-dot dot-green"></div>
+                </div>
+                <div class="terminal-body">
+                    <div class="prompt"></div>
+                    <div style="margin-bottom: 8px;">./get_status.sh</div>
+                    <div>> OS: Ubuntu 25.04</div>
+                    <div>> Status: Compiling code...</div>
+                    <div class="prompt" style="margin-top: 16px;"></div>
+                    <div class="typewriter">echo "Wake up, Neo..."</div>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-title" id="projects">
+            <svg viewBox="0 0 16 16" width="24" height="24"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+            Featured Work
+        </h2>
+
+        <div class="projects-grid" id="projects-grid">
+        </div>
+    </div>
+    <script>
+        const githubUsername = 'Vovan999222';
+        const apiUrl = `https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=4`;
+
+        const languageColors = {
+            "Python": "#3572A5",
+            "Java": "#b07219",
+            "Go": "#00ADD8",
+            "C#": "#178600",
+            "JavaScript": "#f1e05a",
+            "HTML": "#e34c26",
+            "CSS": "#563d7c",
+            "C++": "#f34b7d"
+        };
+
+        async function fetchGitHubRepos() {
+            const grid = document.getElementById('projects-grid');
+            
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('Ошибка сети');
+                const repos = await response.json();
+                grid.innerHTML = '';
+
+                repos.forEach(repo => {
+                    const langColor = languageColors[repo.language] || "#8b949e";
+                    const langText = repo.language || "Unknown";
+                    const date = new Date(repo.updated_at).toLocaleDateString('en-US', {
+                        month: 'short', day: 'numeric', year: 'numeric'
+                    });
+
+                    const cardHTML = `
+                        <div class="repo-card">
+                            <div class="repo-header">
+                                <a href="${repo.html_url}" target="_blank" class="repo-name">
+                                    <svg viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+                                    ${repo.name}
+                                </a>
+                                <span class="badge">${repo.visibility === 'public' ? 'Public' : 'Private'}</span>
+                            </div>
+                            <div class="repo-desc">
+                                ${repo.description ? repo.description : 'Описание отсутствует.'}
+                            </div>
+                            <div class="repo-meta">
+                                <span><span class="lang-color" style="background-color: ${langColor};"></span>${langText}</span>
+                                <span>⭐ ${repo.stargazers_count}</span>
+                                <span>Updated ${date}</span>
+                            </div>
+                        </div>
+                    `;
+                    grid.insertAdjacentHTML('beforeend', cardHTML);
+                });
+                
+            } catch (error) {
+                grid.innerHTML = '<p style="color: #ff5f56;">Не удалось загрузить репозитории. Проверьте консоль.</p>';
+                console.error('Ошибка при загрузке репозиториев:', error);
+            }
+        }
+        fetchGitHubRepos();
+    </script>
+    <script src="footer.js"></script>
+    <script src="idk.js"></script>
 </body>
 </html>
