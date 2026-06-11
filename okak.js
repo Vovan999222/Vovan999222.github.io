@@ -30,5 +30,5 @@
         if (widthDiff > threshold || heightDiff > threshold) {
             triggerLockdown();
         }
-    }, 10);
+    }, 500);
 })();
