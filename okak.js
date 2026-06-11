@@ -19,7 +19,6 @@
         document.body.style.overflow = "hidden";
     }
 
-    // 1. Защита от DevTools
     function checkDevTools() {
         const widthDiff = window.outerWidth - window.innerWidth;
         const heightDiff = window.outerHeight - window.innerHeight;
@@ -32,7 +31,6 @@
     window.addEventListener('resize', checkDevTools);
     setInterval(checkDevTools, 1000);
 
-    // 2. Защита от AdBlock
     function checkAdBlocker() {
         const fakeAd = document.createElement('div');
         fakeAd.innerHTML = '&nbsp;';
