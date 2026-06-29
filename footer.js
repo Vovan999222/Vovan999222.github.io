@@ -202,6 +202,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
 
                 <div class="gh-footer-col">
+                    <div class="gh-footer-col-title">Websites</div>
+                    <a href="https://docs.volodimir001.me/" target="_blank" class="gh-footer-link">docs</a>
+                    <a href="https://git.volodimir001.me/" target="_blank" class="gh-footer-link">git</a>
+                    <a href="https://status.volodimir001.me/" target="_blank" class="gh-footer-link">status</a>
+                    <a href="https://files.volodimir001.me/" target="_blank" class="gh-footer-link">files</a>
+                </div>
+
+                <div class="gh-footer-col">
                     <div class="gh-footer-col-title">Other</div>
                     <a href="https://github.com/Vovan999222?tab=repositories" target="_blank" class="gh-footer-link">Repositories</a>
                     <a href="https://github.com/Vovan999222?tab=repositories&q=bot" target="_blank" class="gh-footer-link">Telegram Bots</a>
