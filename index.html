@@ -224,10 +224,22 @@
             flex-direction: column;
             background-color: var(--bg-color);
             transition: border-color 0.2s ease;
+            min-height: 200.8px;
         }
 
         .repo-card:hover {
             border-color: var(--text-muted);
+        }
+
+        .repo-card:empty {
+            background: linear-gradient(90deg, var(--bg-color) 25%, var(--header-bg) 50%, var(--bg-color) 75%);
+            background-size: 200% 100%;
+            animation: loadingPulse 1.5s infinite linear;
+        }
+
+        @keyframes loadingPulse {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
 
         .repo-header {
@@ -356,6 +368,14 @@
         </h2>
 
         <div class="projects-grid" id="projects-grid">
+            <div class="repo-card">  
+            </div>
+            <div class="repo-card">
+            </div>
+            <div class="repo-card">
+            </div>
+            <div class="repo-card">
+            </div>
         </div>
     </div>
     <script>
